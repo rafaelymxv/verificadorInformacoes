@@ -16,7 +16,7 @@ main{
 }
 
 .cabecalho{
-    color:black;
+    color:rgb(196, 237, 247);
     padding: 15px 25 px;
     display: flex;
     justify-content: space-between;
