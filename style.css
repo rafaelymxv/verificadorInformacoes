@@ -25,7 +25,6 @@ main {
 }
 
 .cartao {
-
     width: 260px;
     height: 200px;
 }
@@ -33,4 +32,8 @@ main {
 .cartao-imagem {
 
     width: 100%;
+}
+
+.cartao-interno {
+    position: relative
 }
