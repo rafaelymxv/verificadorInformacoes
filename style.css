@@ -1,57 +1,103 @@
 * {
     margin: 0;
     padding: 0;
-
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
 body {
-
-    display: flex;
-    flex-direction: column;
-    min-width: 100vh;
-}
-
-main {
-    flex: 1;
+    background-color: #f0f2f5;
+    text-align: center;
 }
 
 .cabecalho {
-    color: rgb(196, 237, 247);
-    padding: 15px 25 px;
+    background-color: #1e293b;
+    color: white;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #000080;
 }
 
+.cabecalho a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2rem;
+}
+
+h2 {
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.container-cartoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* --- Efeito Flip Card --- */
 .cartao {
-    width: 260px;
-    height: 200px;
-}
-
-.cartao-imagem {
-
-    width: 100%;
+    background-color: transparent;
+    width: 250px;
+    height: 320px;
+    perspective: 1000px; /* Cria a sensação 3D */
 }
 
 .cartao-interno {
     position: relative;
-    transition: transform 0.8s;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
     transform-style: preserve-3d;
 }
 
-.cartao:hover .cartao-interno{
-
+.cartao:hover .cartao-interno {
     transform: rotateY(180deg);
 }
+
 .cartao-frente, .cartao-verso {
     position: absolute;
-    border-radius: 12px ;
-    box-shadow: 0,6px 12px rgba(0,0,0.15);
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.cartao-verso{
+.cartao-frente {
+    background-color: #ffffff;
+    color: #333;
+}
 
+.cartao-verso {
+    background-color: #2563eb;
+    color: white;
     transform: rotateY(180deg);
+}
+
+.cartao img {
+    width: 100%;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+footer {
+    margin-top: 3rem;
+    padding: 1rem;
+    background-color: #1e293b;
+    color: white;
 }
